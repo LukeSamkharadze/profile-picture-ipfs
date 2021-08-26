@@ -9,6 +9,7 @@ contract ProfilePicture is ERC721 {
   string[] public images;
 
   mapping(string => bool) public imageExists;
+  mapping(address => string) public userImages;
 
   constructor() ERC721("Profile Picture", "PP") {
     owner = msg.sender;
@@ -21,5 +22,6 @@ contract ProfilePicture is ERC721 {
     uint _id = images.length - 1;
     _mint(msg.sender, _id);
     imageExists[_hash] = true;
+    userImages[msg.sender] = _hash;
   }
 }
