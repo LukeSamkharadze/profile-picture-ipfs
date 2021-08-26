@@ -20,6 +20,6 @@ contract ProfilePicture is ERC721 {
     images.push(_hash);
     uint _id = images.length - 1;
     _mint(msg.sender, _id);
-    isImageMinted[_hash] = true;
+    imageExists[_hash] = true;
   }
 }

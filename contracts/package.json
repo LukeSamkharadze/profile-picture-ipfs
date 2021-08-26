@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "truffle test --config ../truffle-config.js",
+    "compile": "truffle compile --config ../truffle-config.js",
+    "migrate": "truffle migrate --reset --config ../truffle-config.js",
+    "start": "npm run compile && npm run migrate"
   },
   "author": "",
   "license": "ISC",
